@@ -1,0 +1,53 @@
+@use "sass:color";
+
+$primary-color: #1976d2;
+$primary-hover: color.scale($primary-color, $lightness: -10%);
+$bg-color: #ececec;
+$text-color: #333;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $bg-color;
+  padding: 10px 20px;
+  box-shadow: 0 2px 4px rgba(154, 16, 16, 0.1);
+
+  .logo {
+    font-weight: bold;
+    font-size: 20px;
+    color: white;
+    background-color: $primary-color;
+    border-radius: 50%;
+    padding: 10px;
+    text-decoration: none;
+  }
+
+  .button-group {
+    display: flex;
+    gap: 10px;
+
+    button {
+      padding: 8px 16px;
+      border: none;
+      background-color: $primary-color;
+      color: white;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+
+      &:hover {
+        background-color: $primary-hover;
+      }
+    }
+  }
+
+  .button-reg {
+    padding: 5px;
+    border-radius: 100%;
+    background-color: rgba(90, 89, 89, 0.371);
+    &:hover {
+      background-color: color.scale(rgba(90, 89, 89, 0.371), $lightness: -50%);
+    }
+  }
+}
