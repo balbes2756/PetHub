@@ -1,4 +1,4 @@
-<header class="header">
+<!-- <header class="header">
   <a routerLink="/" class="logo"> PETHUB </a>
 
   <nav class="button-group">
@@ -12,6 +12,49 @@
       Сообщество
     </button>
   </nav>
+  <div class="button-reg">
+    <img src="assets/icons/user.svg" alt="User" width="32" height="32" />
+  </div>
+</header> -->
+
+<header class="header">
+  <a routerLink="/" class="logo">PETHUB</a>
+
+  <nav class="button-group">
+    <button
+      class="menu-button"
+      routerLink="/announcements"
+      routerLinkActive="active"
+    >
+      <span class="icon">
+        <img src="assets/icons/news.svg" alt="Bulletin" />
+      </span>
+      <span class="text">Объявления</span>
+    </button>
+
+    <button
+      class="menu-button"
+      routerLink="/marketplace"
+      routerLinkActive="active"
+    >
+      <span class="icon">
+        <img src="assets/icons/market.svg" alt="Marketplace" />
+      </span>
+      <span class="text">Маркет</span>
+    </button>
+
+    <button
+      class="menu-button"
+      routerLink="/community"
+      routerLinkActive="active"
+    >
+      <span class="icon">
+        <img src="assets/icons/community.svg" alt="Community" />
+      </span>
+      <span class="text">Сообщество</span>
+    </button>
+  </nav>
+
   <div class="button-reg">
     <img src="assets/icons/user.svg" alt="User" width="32" height="32" />
   </div>

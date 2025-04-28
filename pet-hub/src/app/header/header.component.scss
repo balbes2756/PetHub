@@ -5,7 +5,64 @@ $primary-hover: color.scale($primary-color, $lightness: -10%);
 $bg-color: #ececec;
 $text-color: #333;
 
+// .header {
+//   position: fixed;
+//   top: 5px;
+//   left: 5px;
+//   right: 5px;
+//   z-index: 1000; // чтобы быть выше карточек и контента
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+//   background-color: $bg-color;
+//   padding: 10px 20px;
+//   box-shadow: 0 2px 4px rgba(154, 16, 16, 0.1);
+
+//   .logo {
+//     font-weight: bold;
+//     font-size: 20px;
+//     color: white;
+//     background-color: $primary-color;
+//     border-radius: 50%;
+//     padding: 10px;
+//     text-decoration: none;
+//   }
+
+//   .button-group {
+//     display: flex;
+//     gap: 10px;
+
+//     button {
+//       padding: 8px 16px;
+//       border: none;
+//       background-color: $primary-color;
+//       color: white;
+//       border-radius: 4px;
+//       cursor: pointer;
+//       transition: background-color 0.2s;
+
+//       &:hover {
+//         background-color: $primary-hover;
+//       }
+//     }
+//   }
+
+//   .button-reg {
+//     padding: 5px;
+//     border-radius: 100%;
+//     background-color: rgba(90, 89, 89, 0.371);
+//     &:hover {
+//       background-color: color.scale(rgba(90, 89, 89, 0.371), $lightness: -50%);
+//     }
+//   }
+// }
+
 .header {
+  position: fixed;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  z-index: 1000;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -18,34 +75,97 @@ $text-color: #333;
     font-size: 20px;
     color: white;
     background-color: $primary-color;
-    border-radius: 50%;
-    padding: 10px;
+    border-radius: 8px;
+    padding: 10px 20px;
     text-decoration: none;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .button-group {
     display: flex;
-    gap: 10px;
+    gap: 15px;
 
-    button {
-      padding: 8px 16px;
-      border: none;
+    .menu-button {
+      position: relative;
+      width: 140px;
+      height: 50px;
       background-color: $primary-color;
-      color: white;
-      border-radius: 4px;
+      border: none;
+      border-radius: 8px;
+      overflow: hidden;
       cursor: pointer;
-      transition: background-color 0.2s;
+      transition: background-color 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+
+      .icon,
+      .text {
+        position: absolute;
+        transition: all 0.4s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+      }
+
+      .icon {
+        top: 0;
+        opacity: 1;
+      }
+
+      .text {
+        top: 100%;
+        opacity: 0;
+        color: white;
+        font-size: 14px;
+        font-weight: bold;
+        text-transform: uppercase;
+        text-align: center;
+        padding: 0 8px;
+      }
 
       &:hover {
         background-color: $primary-hover;
+
+        .icon {
+          top: -100%;
+          opacity: 0;
+        }
+
+        .text {
+          top: 0;
+          opacity: 1;
+        }
+      }
+
+      img {
+        width: 28px;
+        height: 28px;
       }
     }
   }
 
   .button-reg {
     padding: 5px;
-    border-radius: 100%;
+    border-radius: 50%;
     background-color: rgba(90, 89, 89, 0.371);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+
+    img {
+      width: 32px;
+      height: 32px;
+    }
+
     &:hover {
       background-color: color.scale(rgba(90, 89, 89, 0.371), $lightness: -50%);
     }
