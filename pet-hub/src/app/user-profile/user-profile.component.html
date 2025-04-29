@@ -1,0 +1,21 @@
+<div class="user-profile">
+  <section class="user-info">
+    <h2>Личная информация</h2>
+    <p><strong>Имя:</strong> Иван Иванов</p>
+    <p><strong>Email:</strong> ivanexample.com</p>
+    <p><strong>Город:</strong> Город N</p>
+  </section>
+
+  <section class="pets-section">
+    <h2>Мои питомцы</h2>
+    <div class="pet-cards">
+      <div class="pet-card" *ngFor="let pet of pets">
+        <div class="pet-avatar"></div>
+        <h3>{{ pet.name }}</h3>
+        <p>{{ pet.description }}</p>
+      </div>
+    </div>
+  </section>
+
+  <button (click)="logout()">Выйти</button>
+</div>

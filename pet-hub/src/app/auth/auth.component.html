@@ -1,0 +1,21 @@
+<div class="auth-container">
+  <h2>Вход в PetHub</h2>
+  <form (ngSubmit)="login()">
+    <input
+      type="text"
+      placeholder="Логин"
+      [(ngModel)]="username"
+      name="username"
+      required
+    />
+    <input
+      type="password"
+      placeholder="Пароль"
+      [(ngModel)]="password"
+      name="password"
+      required
+    />
+    <button type="submit">Войти</button>
+    <p *ngIf="loginFailed" class="error">Неверный логин или пароль</p>
+  </form>
+</div>

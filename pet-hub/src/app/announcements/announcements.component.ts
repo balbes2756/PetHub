@@ -13,17 +13,17 @@ export class AnnouncementsComponent {
     {
       title: 'Пропал кот',
       description: 'Белый пушистый кот, откликается на Мурзик.',
-      imageUrl: 'assets/img/cat1.jpg',
+      imageUrl: 'assets/img/pet_1.jpg',
     },
     {
       title: 'Отдам щенка',
       description: 'Маленький, игривый. Очень добрый! Порода — метис.',
-      imageUrl: 'assets/img/dog1.jpg',
+      imageUrl: 'assets/img/pet_2.jpg',
     },
     {
       title: 'Продам клетку',
       description: 'Для грызунов. Почти новая.',
-      imageUrl: 'assets/img/cage.jpg',
+      imageUrl: 'assets/img/pet_3.jpg',
     },
     // добавь больше для теста
   ];

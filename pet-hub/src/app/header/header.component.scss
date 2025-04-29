@@ -92,7 +92,7 @@ $text-color: #333;
       position: relative;
       width: 140px;
       height: 50px;
-      background-color: $primary-color;
+      //background-color: $primary-color;
       border: none;
       border-radius: 8px;
       overflow: hidden;
@@ -122,16 +122,16 @@ $text-color: #333;
       .text {
         top: 100%;
         opacity: 0;
-        color: white;
-        font-size: 14px;
+        color: black;
+        font-size: 16px;
         font-weight: bold;
-        text-transform: uppercase;
+        //text-transform: uppercase;
         text-align: center;
         padding: 0 8px;
       }
 
       &:hover {
-        background-color: $primary-hover;
+        //background-color: $primary-hover;
 
         .icon {
           top: -100%;
@@ -145,8 +145,8 @@ $text-color: #333;
       }
 
       img {
-        width: 28px;
-        height: 28px;
+        width: 32px;
+        height: 32px;
       }
     }
   }
