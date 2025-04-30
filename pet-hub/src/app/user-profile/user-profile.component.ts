@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-user-profile',
@@ -16,10 +17,9 @@ export class UserProfileComponent {
     { name: 'Кеша', description: 'Заглушка для попугая' },
   ];
 
-  constructor(private router: Router) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   logout(): void {
-    localStorage.removeItem('isAuthenticated');
-    location.reload();
+    this.authService.logout();
   }
 }

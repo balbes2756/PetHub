@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-auth',
@@ -12,16 +13,15 @@ import { FormsModule } from '@angular/forms';
 export class AuthComponent {
   username = '';
   password = '';
-  loginFailed = false;
+  error = '';
 
-  constructor(private router: Router) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
-  login() {
-    if (this.username === 'admin' && this.password === '1234') {
-      localStorage.setItem('isAuthenticated', 'true');
-      location.reload(); // обновит приложение и отобразит основной интерфейс
+  login(): void {
+    if (this.authService.login(this.username, this.password)) {
+      this.router.navigateByUrl('/');
     } else {
-      this.loginFailed = true;
+      this.error = 'Неверный логин или пароль';
     }
   }
 }

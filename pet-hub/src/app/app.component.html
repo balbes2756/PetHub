@@ -1,4 +1,4 @@
-<div *ngIf="!isAuthenticated; else appContent">
+<div *ngIf="!authService.isLoggedIn(); else appContent">
   <app-auth />
 </div>
 

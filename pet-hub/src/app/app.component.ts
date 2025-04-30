@@ -4,7 +4,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { AuthComponent } from './auth/auth.component';
 import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
+import { AuthService } from './services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -20,10 +20,5 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'pet-hub';
-  isAuthenticated = false;
-
-  constructor() {
-    const auth = localStorage.getItem('isAuthenticated');
-    this.isAuthenticated = auth === 'true';
-  }
+  constructor(public authService: AuthService) {}
 }

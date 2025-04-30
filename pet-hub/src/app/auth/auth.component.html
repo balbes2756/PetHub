@@ -16,6 +16,6 @@
       required
     />
     <button type="submit">Войти</button>
-    <p *ngIf="loginFailed" class="error">Неверный логин или пароль</p>
+    <p *ngIf="error" class="error">{{ error }}</p>
   </form>
 </div>
