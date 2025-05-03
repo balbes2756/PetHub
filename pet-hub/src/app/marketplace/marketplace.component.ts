@@ -28,6 +28,18 @@ export class MarketplaceComponent {
       price: 3500,
       imageUrl: 'assets/img/fishHouse.jpg',
     },
+    {
+      name: 'Аквариум 60л',
+      description: 'Без трещин, с крышкой и подсветкой.',
+      price: 3500,
+      imageUrl: 'assets/img/fishHouse.jpg',
+    },
+    {
+      name: 'Домик для кошки',
+      description: 'Мягкий, удобный, как новый.',
+      price: 1200,
+      imageUrl: 'assets/img/catHouse.jpg',
+    },
     // добавь ещё товары при желании
   ];
 }

@@ -1,0 +1,104 @@
+/* announcement-card.component.scss */
+.card {
+  background: #fff;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin: 0 0 1rem;
+  display: inline-block;
+  width: 100%;
+  break-inside: avoid;
+  overflow: hidden;
+  transition: transform 0.2s;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-3px);
+  }
+
+  img {
+    width: 100%;
+    display: block;
+    border-bottom: 1px solid #eee;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+    margin: 0.75rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+    margin: 0 0.75rem 0.75rem;
+    color: #555;
+  }
+}
+
+// Модальное окно
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7); // Полупрозрачный фон
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  cursor: pointer;
+  overflow: hidden; // Убираем скролл с фона
+}
+
+.modal-content {
+  background: #fff;
+  border-radius: 0.75rem;
+  padding: 2rem;
+  max-width: 80%; // Ограничиваем ширину модального окна
+  max-height: 80vh; // Ограничиваем высоту модального окна
+  overflow: auto; // Добавляем скролл только внутри контента
+  position: relative;
+  cursor: default; // Предотвращаем "перетаскивание" курсора
+  display: flex;
+  flex-direction: column;
+  align-items: center; // Центрируем содержимое по горизонтали
+}
+
+.image-container {
+  display: flex;
+  justify-content: center; // Центрируем изображение
+  margin-bottom: 1rem;
+
+  img {
+    max-width: 100%; // Изображение не выходит за пределы контейнера
+    max-height: 60vh; // Ограничиваем высоту изображения до 60% от высоты экрана
+    height: auto; // Сохраняем пропорции
+    object-fit: contain; // Сохраняем пропорции изображения
+  }
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: #555;
+}
+
+.close-button {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: #aaa;
+  cursor: pointer;
+  transition: color 0.2s;
+
+  &:hover {
+    color: #555;
+  }
+}

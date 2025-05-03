@@ -1,7 +1,12 @@
-<div class="board">
+<!-- <div class="board">
   <div class="card" *ngFor="let item of announcements">
     <img [src]="item.imageUrl" alt="Объявление" />
     <h3>{{ item.title }}</h3>
     <p>{{ item.description }}</p>
   </div>
+</div> -->
+
+<!-- board.component.html -->
+<div class="board">
+  <news-card *ngFor="let item of announcements" [item]="item"></news-card>
 </div>

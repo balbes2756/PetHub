@@ -1,0 +1,18 @@
+<!-- announcement-card.component.html -->
+<div class="card" (click)="openModal()">
+  <img [src]="item.imageUrl" alt="Объявление" />
+  <h3>{{ item.title }}</h3>
+  <p>{{ item.description }}</p>
+</div>
+
+<!-- Модальное окно -->
+<div *ngIf="isModalOpen" class="modal-overlay" (click)="closeModal()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <div class="image-container">
+      <img #modalImage [src]="item.imageUrl" alt="Объявление" />
+    </div>
+    <h3>{{ item.title }}</h3>
+    <p>{{ item.description }}</p>
+  </div>
+  <button class="close-button" (click)="closeModal()">×</button>
+</div>

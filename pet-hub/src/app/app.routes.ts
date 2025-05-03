@@ -4,11 +4,9 @@ import { MarketplaceComponent } from './marketplace/marketplace.component';
 import { CommunityComponent } from './community/community.component';
 import { HomeComponent } from './home/home.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
-import { AuthComponent } from './auth/auth.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'auth', component: AuthComponent },
   { path: 'home', component: HomeComponent },
   { path: 'announcements', component: AnnouncementsComponent },
   { path: 'marketplace', component: MarketplaceComponent },

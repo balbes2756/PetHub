@@ -9,6 +9,4 @@ import { RouterModule } from '@angular/router';
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
-export class HeaderComponent {
-  @Input() buttonLabels: string[] = ['Button 1', 'Button 2', 'Button 3'];
-}
+export class HeaderComponent {}
