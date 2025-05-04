@@ -59,14 +59,14 @@
   position: relative;
   cursor: default; // Предотвращаем "перетаскивание" курсора
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center; // Центрируем содержимое по горизонтали
+  gap: 2rem;
 }
 
 .image-container {
   display: flex;
   justify-content: center; // Центрируем изображение
-  margin-bottom: 1rem;
 
   img {
     max-width: 100%; // Изображение не выходит за пределы контейнера
@@ -76,15 +76,19 @@
   }
 }
 
-h3 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-}
+.info-container {
+  h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
 
-p {
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
-  color: #555;
+  p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: #555;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+  }
 }
 
 .close-button {

@@ -11,8 +11,10 @@
     <div class="image-container">
       <img #modalImage [src]="item.imageUrl" alt="Объявление" />
     </div>
-    <h3>{{ item.title }}</h3>
-    <p>{{ item.description }}</p>
+    <div class="info-container">
+      <h3>{{ item.title }}</h3>
+      <p>{{ item.description }}</p>
+    </div>
   </div>
   <button class="close-button" (click)="closeModal()">×</button>
 </div>

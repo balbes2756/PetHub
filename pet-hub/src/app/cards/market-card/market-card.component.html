@@ -1,0 +1,18 @@
+<div class="product-card">
+  <!-- Изображение товара -->
+  <img [src]="product.imageUrl" [alt]="product.title" class="product-image" />
+
+  <!-- Контент карточки -->
+  <div class="content">
+    <h3 class="title">{{ product.title }}</h3>
+    <p class="description" *ngIf="product.description">
+      {{ product.description }}
+    </p>
+
+    <!-- Цена -->
+    <div class="price">{{ product.price }} ₽</div>
+
+    <!-- Кнопка -->
+    <button class="buy-button">Купить</button>
+  </div>
+</div>
