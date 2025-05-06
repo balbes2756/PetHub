@@ -1,18 +1,44 @@
 <div class="user-profile">
+  <!-- Информация о пользователе -->
   <section class="user-info">
-    <h2>Личная информация</h2>
-    <p><strong>Константин Бердников</strong></p>
-    <p><strong>Email:</strong> berdnikovk354&#64;gmail.com</p>
-    <p><strong>Город:</strong> Норильск</p>
+    <h2>Профиль пользователя</h2>
+    <div class="info-row">
+      <strong>Имя:</strong>
+      <span>Константин Бердников</span>
+    </div>
+    <div class="info-row">
+      <strong>Email:</strong>
+      <span>berdnikovk354&#64;gmail.com</span>
+    </div>
+    <div class="info-row">
+      <strong>Город:</strong>
+      <span>Норильск</span>
+    </div>
+
+    <button class="edit-button">Редактировать профиль</button>
   </section>
 
+  <!-- Секция питомцев -->
   <section class="pets-section">
-    <h2>Мои питомцы</h2>
+    <div class="section-header">
+      <h2>Мои питомцы</h2>
+      <button class="add-pet-button">Добавить питомца</button>
+    </div>
+
     <div class="pet-cards">
-      <div class="pet-card" *ngFor="let pet of pets">
-        <div class="pet-avatar"></div>
+      <div class="pet-card" *ngFor="let pet of pets; trackBy: trackById">
+        <div
+          class="pet-avatar"
+          [style.background-image]="
+            'url(' + (pet.avatarUrl || 'assets/img/pet-placeholder.jpg') + ')'
+          "
+        ></div>
         <h3>{{ pet.name }}</h3>
         <p>{{ pet.description }}</p>
+        <div class="pet-actions">
+          <button class="action edit">Редактировать</button>
+          <button class="action delete">Удалить</button>
+        </div>
       </div>
     </div>
   </section>

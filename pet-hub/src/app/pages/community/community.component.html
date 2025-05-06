@@ -1,10 +1,55 @@
+<!-- community.component.html -->
+
+<!-- Форма создания нового поста -->
+<div class="new-post-form">
+  <h4>Создать новую тему</h4>
+  <input type="text" [(ngModel)]="newPostTitle" placeholder="Заголовок темы" />
+  <textarea [(ngModel)]="newPostContent" placeholder="Текст темы"></textarea>
+  <input
+    type="text"
+    [(ngModel)]="newPostTags"
+    placeholder="Теги через запятую"
+  />
+
+  <button (click)="createPost()">Опубликовать</button>
+</div>
+
+<!-- Лента постов -->
 <div class="community-feed">
   <div class="post-card" *ngFor="let post of posts">
     <h3>{{ post.title }}</h3>
     <p class="author">Автор: {{ post.author }}</p>
     <p class="content">{{ post.content }}</p>
+
+    <!-- Теги -->
     <div class="tags">
       <span *ngFor="let tag of post.tags" class="tag">#{{ tag }}</span>
+    </div>
+
+    <!-- Комментарии -->
+    <div class="comments-section">
+      <h5>Комментарии:</h5>
+      <div
+        *ngIf="!post.comments || post.comments.length === 0"
+        class="no-comments"
+      >
+        Нет комментариев
+      </div>
+
+      <div class="comment" *ngFor="let comment of post.comments">
+        <p class="comment-author">Автор: {{ comment.author }}</p>
+        <p class="comment-text">{{ comment.text }}</p>
+      </div>
+
+      <!-- Форма для нового комментария -->
+      <div class="add-comment">
+        <input
+          type="text"
+          [(ngModel)]="post.newCommentText"
+          placeholder="Ваш комментарий..."
+        />
+        <button (click)="addComment(post)">Добавить</button>
+      </div>
     </div>
   </div>
 </div>
